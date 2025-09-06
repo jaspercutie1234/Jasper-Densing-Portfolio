@@ -553,6 +553,7 @@ section {
 
 .name {
   color: #5918df !important;
+  width: 750px !important;
 }
 
 .design {
@@ -705,6 +706,7 @@ section {
     padding: 10px 20px;
   }
 }
+
 
 
 
