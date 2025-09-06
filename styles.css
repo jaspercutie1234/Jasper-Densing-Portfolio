@@ -543,7 +543,7 @@ section {
   font-weight: 700 !important;
   position: absolute !important;
   right: -100px;
-  width: 700px !important;
+  width: 750px !important;
   top: 130px !important;
   color: white !important;
   line-height: normal !important;
@@ -705,6 +705,7 @@ section {
     padding: 10px 20px;
   }
 }
+
 
 
 
