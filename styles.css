@@ -542,8 +542,8 @@ section {
   font-size: 45px !important;
   font-weight: 700 !important;
   position: absolute !important;
-  right: -300px;
-  width: 900px !important;
+  right: -400px;
+  width: 1000px !important;
   top: 130px !important;
   color: white !important;
   line-height: normal !important;
@@ -706,6 +706,7 @@ section {
     padding: 10px 20px;
   }
 }
+
 
 
 
