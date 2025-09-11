@@ -628,7 +628,7 @@ section {
 }
 
 /* Reset any global styles that might affect home section */
-.home-section h1,
+
 .home-section h2,
 .home-section h3,
 .home-section h4,
@@ -706,6 +706,7 @@ section {
     padding: 10px 20px;
   }
 }
+
 
 
 
