@@ -25,9 +25,10 @@
   <body>
     <!-- Navigation Bar -->
     <nav id="navbar">
-        <button id="theme-toggle" aria-label="Toggle theme">
-          <span id="theme-icon">🌙</span>
-        </button>
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <span id="theme-icon">🌙</span>
+      </button>
+
       <div class="nav-bar">
         <ul class="navbar-nav">
           <a href="#home"><li class="nav-items">Home /></li></a>
@@ -69,8 +70,14 @@
 
     <!-- About Me Section -->
     <section id="about-me" class="about-me-section">
-      <div class="section-header">
+      <div class="section-header" style="position: relative">
         <h2>About Me</h2>
+        <button
+          id="edit-about-btn"
+          style="position: absolute; top: 1rem; right: 1rem"
+        >
+          Edit
+        </button>
         <div class="section-fade-text">
           <p>ABOUT ME</p>
         </div>
@@ -81,7 +88,7 @@
           <img class="second-img" src="jpeg/1700968412002.jpg" />
         </div>
         <div class="profile-text" data-aos="slide-left" data-aos-offset="100">
-          <h3>
+          <h3 id="about-main">
             A Web Developer with 5 years experience in various tasks. A tech
             savvy and problem solver that you can rely on. Enthusiastic
             individual with superior skills in both team based and independent
@@ -94,7 +101,7 @@
           data-aos="slide-right"
           data-aos-duration="800"
         >
-          <h4>
+          <h4 id="about-extra">
             Also, a skilled photographer with a keen eye for detail and a
             commitment to turning ordinary scenes into extraordinary visual
             narratives.
@@ -411,6 +418,49 @@
         </div>
       </div>
     </section>
+
+    <script>
+      // Theme toggle logic
+      const toggleBtn = document.getElementById("theme-toggle");
+      const themeIcon = document.getElementById("theme-icon");
+      const body = document.body;
+
+      // Load theme from localStorage
+      if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-theme");
+        themeIcon.textContent = "🌞";
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        body.classList.toggle("light-theme");
+        const isLight = body.classList.contains("light-theme");
+        themeIcon.textContent = isLight ? "🌞" : "🌙";
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+      });
+
+      // Editable About Me section
+      const editBtn = document.getElementById("edit-about-btn");
+      const aboutMain = document.getElementById("about-main");
+      const aboutExtra = document.getElementById("about-extra");
+      let editing = false;
+
+      editBtn.addEventListener("click", () => {
+        editing = !editing;
+        if (editing) {
+          aboutMain.contentEditable = "true";
+          aboutExtra.contentEditable = "true";
+          aboutMain.focus();
+          editBtn.textContent = "Save";
+          aboutMain.style.outline = "2px dashed #8c6bff";
+          aboutExtra.style.outline = "2px dashed #8c6bff";
+        } else {
+          aboutMain.contentEditable = "false";
+          aboutExtra.contentEditable = "false";
+          editBtn.textContent = "Edit";
+          aboutMain.style.outline = "none";
+          aboutExtra.style.outline = "none";
+        }
+      });
+    </script>
   </body>
 </html>
-
