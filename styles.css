@@ -541,8 +541,8 @@ section {
   font-size: 45px !important;
   font-weight: 700 !important;
   position: absolute !important;
-  right: -100px;
-  width: 700px !important;
+  right: -400px;
+  width: 1000px !important;
   top: 130px !important;
   color: white !important;
   line-height: normal !important;
@@ -830,4 +830,5 @@ body.light-theme .section-fade-text p {
 #edit-about-btn:hover {
   background: #5918df;
 }
+
 
